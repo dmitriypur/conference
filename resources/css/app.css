@@ -1,0 +1,269 @@
+@import "tailwindcss";
+
+/* Оптимизация загрузки шрифтов */
+@layer base {
+    @font-face {
+        font-family: 'SoyuzGrotesk';
+        src: url('/public/fonts/SoyuzGrotesk/SoyuzGrotesk.eot') format('woff2'),
+        url("/public/fonts/SoyuzGrotesk/SoyuzGrotesk.eot?#iefix") format("embedded-opentype"),
+        url("/public/fonts/SoyuzGrotesk/SoyuzGrotesk.woff") format("woff"),
+        url("/public/fonts/SoyuzGrotesk/SoyuzGrotesk.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Montserrat';
+        src: url("/public/fonts/Montserrat/Montserrat-Bold.woff") format("woff"),
+        url("/public/fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Montserrat';
+        src: url("/public/fonts/Montserrat/Montserrat-SemiBold.woff") format("woff"),
+        url("/public/fonts/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Montserrat';
+        src: url("/public/fonts/Montserrat/Montserrat-Medium.woff") format("woff"),
+        url("/public/fonts/Montserrat/Montserrat-Medium.ttf") format("truetype");
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Montserrat';
+        src: url("/public/fonts/Montserrat/Montserrat-Regular.woff") format("woff"),
+        url("/public/fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+    html {
+        font-family: 'Arial', system-ui, sans-serif;
+    }
+    h1,h2,h3,h4,h5,h6{
+        font-family: var(--font-secondary);
+    }
+
+    .bg-hero {
+        background-image: url('/public/images/hero-bg.jpg');
+    }
+}
+
+@theme {
+    --color-primary-gr: 121.15deg, #1C1854 6.04%, #081440 95.29%;
+    --white-gr: 178.31deg, rgba(255, 255, 255, 0.5) 12.33%, rgba(255, 255, 255, 0) 34.31%, rgba(255, 255, 255, 0) 52.66%, rgba(255, 255, 255, 0.54) 74.67%;
+    --white2-gr: 86.16deg, rgba(255, 255, 255, 0.4) 11.14%, rgba(255, 255, 255, 0.07) 113.29%;
+    --white3-gr: 155.31deg, rgba(255, 255, 255, 0.5) 12.33%, rgba(255, 255, 255, 0) 34.31%, rgba(255, 255, 255, 0) 52.66%, rgba(255, 255, 255, 0.54) 74.67%;
+    --white4-gr: 86.16deg, rgba(255, 255, 255, 0.05) 11.14%, rgba(255, 255, 255, 0.05) 113.29%;
+    --white-vertical-gr: 179.37deg, rgba(255, 255, 255, 0.5) 0.55%, rgba(255, 255, 255, 0) 111.12%;
+    --white-vertical2-gr: 90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%;
+    --violet-gr: 90deg, rgba(195, 110, 255, 1) 0%, rgba(106, 64, 255, 1) 52.88%, rgba(10, 215, 255, 1) 100%;
+    --violet2-gr: 90deg, rgba(195, 110, 255, 0.22) 25%, rgba(10, 215, 255, 0.44) 66.07%, rgba(106, 64, 255, 0.2) 86.06%;
+    --violet3-gr: 90deg, rgba(195, 110, 255, 0.368) 0%, rgba(106, 64, 255, 0.3036) 52.88%, rgba(10, 215, 255, 0.2668) 100%;
+    --violet4-gr: 90deg, rgba(195, 110, 255, 0.6) 0%, rgba(106, 64, 255, 0.5) 49.04%, rgba(10, 215, 255, 0.5) 100%;
+    --blue-gr: 90deg, rgba(0, 149, 255, 0.75) 0%, rgba(75, 180, 255, 0.78) 100%;
+    --pink-gr: 129.81deg, #F380FF 16.3%, rgba(243, 135, 255, 0.2) 100%;
+    --pink2-gr: 57.8deg, rgba(255, 255, 255, 0.83) 11.6%, rgba(199, 141, 255, 0.26) 83.17%;
+    --color-pink: rgba(240, 159, 249, 1);
+    --color-purple: rgba(85, 36, 129, 1);
+    --color-my-blue: rgba(66, 66, 209, 1);
+    --color-my-dark-blue: rgba(31, 68, 112, 1);
+    --font-primary: "Montserrat", "sans-serif";
+    --font-secondary: "SoyuzGrotesk", "sans-serif";
+    --breakpoint-2xl: 77.5rem;
+    --breakpoint-xl: 77.5rem;
+    --radius-40: 40px;
+}
+.vertical-white-gr::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(147.91deg, #FFFFFF 9.57%, rgba(255, 255, 255, 0) 56.98%, rgba(255, 255, 255, 0.77) 97.79%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+}
+
+
+
+.circle-gr::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+}
+.circle-gr::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    transition: opacity .3s ease;
+}
+
+.btn-gr {
+    position: relative;
+    /*border-radius: calc(infinity * 1px);*/
+    overflow: hidden;
+    background: linear-gradient(var(--white2-gr));
+    z-index: 1;
+}
+
+.btn-gr > span.bg-gr {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(90deg, rgba(195, 110, 255, 0.8) 0%, rgba(106, 64, 255, 0.7) 52.88%, rgba(10, 215, 255, 0.6) 100%);
+    opacity: 0;
+    z-index: -1;
+    mix-blend-mode: multiply;
+    transition: opacity .3s;
+}
+
+.btn-gr::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    /*border-radius: calc(infinity * 1px);*/
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    z-index: 1;
+    box-shadow: 0px 1.2px 29.92px 0px #452A7C1A;
+    background-image: linear-gradient(168.31deg, rgba(255, 255, 255, 0.5) 12.33%, rgba(255, 255, 255, 0.2) 34.31%, rgba(255, 255, 255, 0.2) 52.66%, rgba(255, 255, 255, 0.5) 74.67%);
+    mix-blend-mode: overlay;
+}
+
+.btn-gr:hover span.bg-gr {
+    opacity: 1;
+}
+
+.btn-gr-pink {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(var(--white2-gr));
+    z-index: 1;
+}
+
+.btn-gr-pink > span.bg-gr {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(var(--pink-gr));
+    opacity: 0;
+    z-index: -1;
+    /*mix-blend-mode: multiply;*/
+    transition: opacity .3s;
+}
+
+.btn-gr-pink::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    z-index: 1;
+    box-shadow: 0px 1.2px 29.92px 0px #452A7C1A;
+    background-image: linear-gradient(var(--pink2-gr));
+}
+
+.btn-gr-pink:hover span.bg-gr {
+    opacity: 1;
+}
+
+.item__step .title-circle{
+    box-shadow: 0px 0px 17.6px 0px rgba(250, 208, 255, 1);
+}
+.item__step .item__step-btn span{
+    opacity: 1;
+}
+.item__step .item__step--text{
+    @apply text-white;
+}
+
+@media (min-width: 1024px) {
+    .item__step .item__step--text{
+        @apply text-white/60;
+    }
+    .item__step:hover .item__step--text{
+        @apply text-white;
+    }
+
+    .item__step .after__line::after{
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 1px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='1' viewBox='0 0 6 1'%3E%3Crect width='6' height='1' fill='%23fff'/%3E%3C/svg%3E");
+        background-repeat: repeat-x;
+        transition: width .3s ease-in-out;
+    }
+    .item__step:hover .after__line::after{
+        width: 100%;
+    }
+    .item__step .item__step-btn::after{
+        content: '';
+        opacity: 0;
+        position: absolute;
+        inset: 0;
+        border-radius: calc(infinity * 1px);
+        background: linear-gradient(var(--violet-gr));
+        z-index: -1;
+        transition: opacity .3s;
+    }
+    .item__step:hover .item__step-btn{
+        box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.48);
+    }
+    .item__step .item__step-btn span{
+        opacity: 0;
+    }
+
+    .item__step:hover .item__step-btn span{
+        opacity: 1;
+    }
+    .item__step:hover .after__line > .circle-gr{
+        mix-blend-mode: unset;
+
+    }
+
+    .item__step:hover .after__line span::before{
+        background: linear-gradient(var(--violet-gr));
+    }
+}
+
+
+@keyframes wiggle {
+    0%{
+        transform: rotate(0);
+    }
+    5%{
+        transform: rotate(-5deg);
+    }
+    15%{
+        transform: rotate(5deg);
+    }
+    25%{
+        transform: rotate(-5deg);
+    }
+    35%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(0);
+    }
+}
